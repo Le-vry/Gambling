@@ -24,7 +24,7 @@
 </script>
 
 <nav>
-	<a href="/Hem">Hem</a>
+	<a href="/">Hem</a>
 	<a href="/Photoapp">Photo App</a>
 	
 </nav>
