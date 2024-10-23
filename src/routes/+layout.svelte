@@ -1,6 +1,6 @@
 <script>
 	import '../app.postcss';
-
+	import { base } from '$app/paths';
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
 	import 'highlight.js/styles/github-dark.css';
@@ -24,8 +24,8 @@
 </script>
 
 <nav>
-	<a href="/">Hem</a>
-	<a href="/Photoapp">Photo App</a>
+	<a href="{base}/">Hem</a>
+	<a href="{base}/Photoapp">Photo App</a>
 	
 </nav>
 
