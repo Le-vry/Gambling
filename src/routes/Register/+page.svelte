@@ -2,7 +2,7 @@
     let color = "black"
 
     function handleSubmit(){
-        alert(Välkommen)
+        alert("Välkommen")
     }
 </script>
 
@@ -13,9 +13,9 @@
             <strong>Registrering</strong>
         </h1>
         
-        <div style="width: 100px; height: 100px; border-radius: 50%; overflow:hidden; background-color:{color};"></div>
+        <div style="width: 100px; height: 100px; border: 4px solid; border-radius: 50%; overflow:hidden; background-color:{color};"></div>
 
-        <form class="Frågor" on:submit|preventDefault={handleSubmit}>
+        <form on:submit|preventDefault={handleSubmit}>
             
             <label for="name">Namn:</label>
             <input type="text" id="name" >
@@ -39,9 +39,7 @@
                 <option value="pink">Rosa</option>
             </select>
 
-            <input type=submit value="Registrera">
-
-
+            <input type="submit" value="Registrera">
         </form>
     </div>
 </main>
@@ -65,7 +63,8 @@
         width: 25%;
         height: 80%;
         background-color: #400000;
-        margin: auto;
+        margin-top: 40px;
+        margin-left: 33.5%;
         
         min-width: 400px;
         min-height: 600px;
@@ -80,12 +79,13 @@
         font-size: 30px;
     }
 
-    .Frågor input {
+    form input {
         color: black;
     }
-    .Frågor option{
+    form option{
         color: black;
     }
+
     input[type=submit]{
         color: white;
         background-color: #BF0000;
@@ -97,6 +97,9 @@
     input[type=submit]:hover{
         background-color: #b30000;
         
+    }
+    input[type=submit]:active{
+        background-color: #800000;
     }
 
 

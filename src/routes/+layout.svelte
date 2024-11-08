@@ -29,6 +29,11 @@
 	
 
 
+	//Navbar color
+	
+	let page = 1
+	let color = "#2a2a2a";
+
 </script>
 
 
@@ -66,6 +71,8 @@
 		max-width: 100%;
 		height: 50px;
 		align-content: center;
+		position: fixed;
+		top: 0;
 		
 
 	}
@@ -75,6 +82,8 @@
 	/*Holds The Nav links and specifies thier position*/
 	.link_container{
 		display: block;
+		position: fixed;
+		top: 13px;
 		align-content: center;
 	}
 

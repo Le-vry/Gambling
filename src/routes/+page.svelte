@@ -57,7 +57,7 @@
 		
 		
 		
-		margin-top: 40px;
+		margin-top: 80px;
 		margin-left: 40px;
 		
 		border-radius: 20px;
@@ -69,16 +69,31 @@
 		color: white;
 		font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		font-size: 30px;
-		margin: auto;
+		margin: 20px;
+		margin-top: 40px;
+
 		
 	}
 
+	
+	h2 {
+		margin: 20px;
+	}
 
+	h3 {
+		margin-top: 15px;
+		margin-bottom: 10px;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
 
 	#inspo{
 		font-family: courier;
 		font-size: 100%;
-		margin: auto;
+		margin-top: none;
+		margin-bottom: 30px;
+		margin-left: 20px;
+		margin-right: 30px;
 	}
 
 	
