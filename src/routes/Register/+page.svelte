@@ -82,6 +82,7 @@
         height: 80%;
         background-color: #400000;
         
+        margin: 5%;
         min-width: 400px;
         min-height: 600px;
         
