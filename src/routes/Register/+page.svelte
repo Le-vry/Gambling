@@ -64,8 +64,8 @@
         width: 100%;
         height: 100%;
         padding: 5%;
-        min-width: 600px;
-        min-height: 600px;
+        min-width: 100%;
+        min-height: 700px;
         
         justify-content: center;
         align-items: center;
