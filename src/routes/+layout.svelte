@@ -31,8 +31,8 @@
 
 	//Navbar color
 	
-	let page = 1
-	let color = "#2a2a2a";
+
+
 
 </script>
 
@@ -44,7 +44,14 @@
 		<div class="link_container">
 			<div class="link"><a class="Home" href="{base}/"> Home </a></div>
 			<div class="link"><a class="Photos" href="{base}/Photoapp"> Photo App </a></div>
-			<div class="link"><a class="Register" href="{base}/Register"> Register </a></div>
+			<div class="link"><a class="Shopping" href="{base}/Shoppinglist"> Shopping List </a></div>
+			<div class="link"><a class="Memory" href="{base}/Memory"> Memory </a></div>
+			<div class="link"><a class="Chat" href="{base}/Chat"> Chat </a></div>
+			<div class="link"><a class="Search" href="{base}/Search"> Search </a></div>
+			
+			<div class="Register" style="float:right"><a href="{base}/Register"> Sign Up / Log in </a></div>
+
+
 		</div>	
 	</nav>
 </main>
@@ -73,8 +80,8 @@
 		align-content: center;
 		position: fixed;
 		top: 0;
-		
 
+		border-bottom: 2px solid #3d3d3d;
 	}
 
 
@@ -84,7 +91,9 @@
 		display: block;
 		position: fixed;
 		top: 13px;
+		width: 100vw;
 		align-content: center;
+
 	}
 
 
@@ -99,20 +108,52 @@
 		padding: 15px 16px;
 		font-size: 16px;
 		text-decoration: none;
+		
+		border-right:2px #3d3d3d;
+		border-style: solid;
+	}
+	.Register a{
+		color: #eeecec;
+		
+		padding: 8px 10px;
+		font-size: 16px;
+		text-decoration: none;
+		
+		margin-right: 20px;
+
+		border-radius: 20px;
+		background-color: #3d3d3d;
+		
 	}
 
 
 
 	/*Change color of specific Nav links when mouse hovers above them*/
 	.Home:hover{
-		background-color: #0A5D00;
+		background-color: #109d00;
 	}
 	.Photos:hover{
-		background-color: #400040;
+		background-color: #a100a1;
 	}
-	.Register:hover{
-		background-color: #400000;
+	.Shopping:hover{
+		background-color: #e48900;
 	}
+	.Memory:hover{
+		background-color: #e3c900;
+	}
+	.Chat:hover{
+		background-color: #00d7cd;
+	}
+	.Search:hover{
+		background-color: #FF00AC;
+	}
+	
+	
+	
+	.Register a:hover{
+		background-color: #383838;
+	}
+
 
 
 
@@ -123,8 +164,8 @@
 	.Photos:active{
 		background-color: #600060;
 	}
-	.Register:active{
-		background-color: #800000;
+	.Register a:active{
+		background-color: #575757;
 	}
 </style>
 <slot />

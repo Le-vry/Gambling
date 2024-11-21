@@ -1,8 +1,10 @@
 <script>
     
-    let image = "https://picsum.photos/id/70/367/267"
-    let photo = "https://picsum.photos/id/88/367/267"
-    let picture = "https://picsum.photos/id/93/367/267"
+    let image = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cf0bf5de-ec75-4a3d-8b9f-c807cf514dfd/dhr1ybl-7e068285-224f-48b9-81fa-30431e382ded.jpg/v1/fit/w_828,h_622,q_70,strp/rellana__by_vergizovart_dhr1ybl-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYwIiwicGF0aCI6IlwvZlwvY2YwYmY1ZGUtZWM3NS00YTNkLThiOWYtYzgwN2NmNTE0ZGZkXC9kaHIxeWJsLTdlMDY4Mjg1LTIyNGYtNDhiOS04MWZhLTMwNDMxZTM4MmRlZC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.q-hO7KItKRlRsWmNhGoAdYqcoLd2JB7w4V_pQBJJEa0"
+    
+    let photo = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cf0bf5de-ec75-4a3d-8b9f-c807cf514dfd/dhphda2-f70d3be9-332f-4edf-b343-1144cc702614.jpg/v1/fit/w_828,h_622,q_70,strp/messmer_by_vergizovart_dhphda2-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTYwIiwicGF0aCI6IlwvZlwvY2YwYmY1ZGUtZWM3NS00YTNkLThiOWYtYzgwN2NmNTE0ZGZkXC9kaHBoZGEyLWY3MGQzYmU5LTMzMmYtNGVkZi1iMzQzLTExNDRjYzcwMjYxNC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.RJcC0A0chuzV1Gowz1bvK5VxVBG8HnuRoT53WuM_kx8"
+    
+    let picture = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bfb92a05-1566-40a3-a04b-1b0489cf67db/df5ek1h-dddb2a9d-8746-44cc-b067-9fdb2e52752e.png/v1/fit/w_828,h_1038/mohg__lord_of_blood_by_daiyou_uonome_df5ek1h-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTIwMCIsInBhdGgiOiJcL2ZcL2JmYjkyYTA1LTE1NjYtNDBhMy1hMDRiLTFiMDQ4OWNmNjdkYlwvZGY1ZWsxaC1kZGRiMmE5ZC04NzQ2LTQ0Y2MtYjA2Ny05ZmRiMmU1Mjc1MmUucG5nIiwid2lkdGgiOiI8PTk1NyJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.NMax76NR6LR-PXycyYhKQpSzKK9lxZ8SOs-dL92u7uo"
 
 </script>
 
