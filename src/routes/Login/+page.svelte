@@ -18,16 +18,6 @@
     let name = ""
     let password = ""
 
-    let colors = [
-        {namn: "Röd", value: "red"}, 
-        {namn: "Orange", value: "orange"},
-        {namn: "Gul", value: "yellow"},
-        {namn: "Grön", value: "green"},
-        {namn: "Turkos", value: "turquoise"},
-        {namn: "Blå", value: "blue"},
-        {namn: "Lila", value: "purple"},
-        {namn: "Rosa", value: "pink"},
-    ]
 
     function handleSubmit(){
         if (name && password) {

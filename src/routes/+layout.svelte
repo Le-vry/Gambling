@@ -158,12 +158,6 @@
 
 
 	/*Change color of specific Nav links when clicked*/
-	.Home:active{
-		background-color: #089000;
-	}
-	.Photos:active{
-		background-color: #600060;
-	}
 	.Register a:active{
 		background-color: #575757;
 	}
