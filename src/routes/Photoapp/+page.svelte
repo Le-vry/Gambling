@@ -6,6 +6,12 @@
     
     let picture = "https://cdna.artstation.com/p/assets/images/images/078/577/882/large/cyprien-rousson-promised-consort-radhan.jpg?1722492308"
 
+    let art1 = "https://pbs.twimg.com/media/GQ2FbcMaMAAwPII.jpg:large"
+
+    let art2 = "https://preview.redd.it/bayle-vs-the-good-hunter-elden-ring-x-bloodborne-by-v0-3nbphx3it4hd1.jpeg?auto=webp&s=d82abd9332f7337591e399347227b12587c3ff61"
+
+    let art3 = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a60d1d37-0394-470b-bb0a-3f896e345a46/di4dvqm-af986899-8d3c-4320-9488-da83298d6a0f.png/v1/fill/w_1280,h_769,q_80,strp/divine_beast_dancing_lion__by_tiagos2003_di4dvqm-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzY5IiwicGF0aCI6IlwvZlwvYTYwZDFkMzctMDM5NC00NzBiLWJiMGEtM2Y4OTZlMzQ1YTQ2XC9kaTRkdnFtLWFmOTg2ODk5LThkM2MtNDMyMC05NDg4LWRhODMyOThkNmEwZi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ZfJkhf0UwpfYlHIto1pdE3jZuBZKAzeuzZqMrdIfpuw"
+
 </script>
 
 <main>
@@ -26,6 +32,15 @@
         </div>
         <div class="image_wrapper">
             <img src= {picture} alt="hej">
+        </div>
+        <div class="image_wrapper">
+            <img src= {art1} alt="så ja">
+        </div>
+        <div class="image_wrapper">
+            <img src= {art2} alt="det blir bättre">
+        </div>
+        <div class="image_wrapper">
+            <img src={art3} alt="nej">
         </div>
     </div>    
 </main>
@@ -68,6 +83,7 @@
         border: 5px solid #800080;
         border-radius: 20px;
         justify-content: center;
+        align-items: center;
         min-width: 80%;
         min-height: 90%;
         

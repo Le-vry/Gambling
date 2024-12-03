@@ -6,9 +6,12 @@
     let varan 
 
     function handleSubmit() {
-        if (nyvara.name.length > 0) {
+        
+        if (nyvara.name.length > 0 && nyvara.name.length < 37) {
             varor = [...varor, varan={name:nyvara.name, köpt:nyvara.köpt, prio:varor.length +1}]
             varor = varor
+        } else if (nyvara.name.length > 35) {
+            alert("Vara för långt. Får ha max 36 karaktärer!")
         } else {
             alert("Ny vara får inte vara tom")
         }
@@ -84,8 +87,8 @@
                                 
                                 { vara.name }
                             
-                                <input type="button" value="X" style="float:inline-end" on:click={delete_item(vara)}>
-                                <input type="button" value="<" style="float:inline-end" on:click={move_item(vara)}>
+                                <input type="button" value="X"  on:click={delete_item(vara)}>
+                                <input type="button" value="<"  on:click={move_item(vara)}>
 
                             </li>
                         {/if}
@@ -152,6 +155,7 @@
         height: 100%;
         background-color: #ff9900;
 
+        overflow:hidden;
     }
 
 
@@ -173,17 +177,22 @@
 
     li{
         display:inline-block;
+        overflow:hidden;
+
+        align-content: center;
+
         background-color: #db8400;
-        margin: 10px;
+        margin: 0.5vh;
         padding: 1%;
         width: 96%;
+        height: 4.5vh;
         border-radius: 10px;
     }
 
 
 
     li input[type="button"]{
-        
+        float:right;
         background-color: #393939;
         padding-left:2%;
         padding-right:2%;
@@ -224,12 +233,16 @@
 
     
     .categories_container section:first-child{  /* vilket barn vill vi styla? */
-        background-color: rgba(0, 0, 0, 0.25) /* svart bakgrund med 10% opacitet */
+        background-color: rgba(0, 0, 0, 0.25);
+        overflow-y: scroll;
+        overflow-x: scroll;
         
     }
     
     .categories_container section:last-child{  /* vilket barn vill vi styla? */
-        background-color: rgba(0, 0, 0, 0.35) /* svart bakgrund med 30% opacitet */
+        background-color: rgba(0, 0, 0, 0.35); /* svart bakgrund med 30% opacitet */
+        overflow-y: scroll;
+        overflow-x: scroll;
     }
 
 
