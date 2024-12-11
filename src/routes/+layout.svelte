@@ -142,7 +142,7 @@
 		background-color: #e3c900;
 	}
 	.Chat:hover{
-		background-color: #00d7cd;
+		background-color: #00c9d7;
 	}
 	.Search:hover{
 		background-color: #FF00AC;

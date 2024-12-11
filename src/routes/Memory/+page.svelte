@@ -1,14 +1,162 @@
 <script>
+    
     let cards = []
 
     let back = "ER_golden_order.png"
+    let front1 = "Margit..jpg"
+    let front2 = "Godrick.jpg"
+    let front3 = "Renalla.png"
+    let front4 = "Radahn.jpg"
+    let front5 = "Mohg.jpg"
+    let front6 = "Malenia.png"
 
-    for (let i = 0; i < 12; i++){
-        cards.push({cardback:back, flipped: false, matched: false})
+    let blueTurn = false
 
-        console.log(cards)
-        
+    let flipped_cards = []
+
+    let card1 
+    let card2
+
+    let redPoints = 0
+    let bluePoints = 0
+
+    function setcards(){
+        for (let i = 0; i < 12; i++){
+            if(i < 2){
+                cards.push({cardfront:front1, flipped: false, matched: false})
+            } else if(i < 4){
+                cards.push({cardfront:front2, flipped: false, matched: false})
+            } else if(i < 6){
+                cards.push({cardfront:front3, flipped: false, matched: false})
+            } else if(i < 8){
+                cards.push({cardfront:front4, flipped: false, matched: false})
+            } else if(i < 10){
+                cards.push({cardfront:front5, flipped: false, matched: false})
+            } else{
+                cards.push({cardfront:front6, flipped: false, matched: false})
+            }
+        }
+
+        for (let i = cards.length -1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i+1));
+            let k = cards[i];
+            cards[i] = cards[j];
+            cards[j] = k;
+        }
+        cards = cards
     }
+
+    function countcards(){
+        let matchedcards = 0
+        for(let i = 0; i < cards.length; i++){
+            if(cards[i].matched == true){
+                matchedcards += 1
+            }
+        }
+        return matchedcards
+        }
+
+    function flippcards(a){
+        
+        if(a.matched !== true && a.flipped !== true){
+            if (flipped_cards.length < 2){
+                flipped_cards.push(a)
+                
+                if(typeof card1 !== 'undefined'){
+                    card2 = cards.indexOf(a)
+                } else{
+                    card1 = cards.indexOf(a)
+                }
+
+                flipped_cards = flipped_cards
+                a.flipped = !a.flipped
+            } 
+
+            if(flipped_cards.length == 2 && typeof card1 !== "undefined" && typeof card2 !== "undefined"){
+                if(flipped_cards[0].cardfront == flipped_cards[1].cardfront){
+                    
+                    setTimeout(() => {
+                        cards[card1].matched = true
+                        cards[card2].matched = true
+
+                        card1 = undefined
+                        card2 = undefined
+
+                        if(blueTurn == false){
+                            redPoints +=1
+                            blueTurn = true
+                        } else{
+                            bluePoints += 1
+                            blueTurn = false
+                        }
+                        
+                        for(let i = 0; i <cards.length; i++){
+                            if(cards[i].matched !== true){
+                                cards[i].flipped = false
+                            }
+                        }
+                        flipped_cards = []
+                    }, 1000);
+                    
+
+                    
+                } else{
+                    
+                    setTimeout(() => {
+                        cards[card1].flipped = false
+                        cards[card2].flipped = false
+
+                        card1 = undefined
+                        card2 = undefined
+
+                        if(blueTurn == false){
+                            blueTurn = true
+                        } else{
+                            blueTurn = false
+                        }
+
+                        for(let i = 0; i <cards.length; i++){
+                            if(cards[i].matched !== true){
+                                cards[i].flipped = false
+                            }
+                        }
+                        flipped_cards = []
+                    }, 1000);
+                    
+                }
+            }
+            cards = cards
+            
+        }
+    }
+    
+
+    function resetcards(){
+        for(let i = 0; i <cards.length; i++){
+            cards[i].flipped = false
+            cards[i].matched = false
+        }
+        cards = cards
+        cards = []
+
+        redPoints = 0
+        bluePoints = 0
+        
+        setcards()
+    }
+
+    setcards()
+
+    $:if(countcards() === 12){
+            if(redPoints == bluePoints){
+                alert("Tie! Nobody wins!")
+            } else if(redPoints > bluePoints){
+                alert("Red wins!")
+            } else {
+                alert("Blue wins!")
+            }
+        }
+    
 </script>
 
 
@@ -18,12 +166,31 @@
         <h1>Memory</h1>
         <div class="memory-grid">
             {#each cards as card}
-                <div class="card">
-                    <img src={card.cardback} alt="f*ck you">
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                <!-- svelte-ignore a11y-no-static-element-interactions -->
+                <div class="card" class:flipped={card.flipped} on:click={flippcards(card)}>
+                    <img class="front" src={card.cardfront} alt="f*ck you">
+                    <img class="back" src={back} alt="f*ck you">
                 </div>
             {/each}
         </div>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+        <h2 on:click={resetcards}>Reset</h2>
     </div>
+    
+    <aside class="turn" class:blue={blueTurn}>
+        
+    </aside>
+    <aside>
+        <p>{redPoints}</p>
+    </aside>
+
+    <aside class="blue">
+        <p>{bluePoints}</p>
+    </aside>
+
+
 </main>
 
 
@@ -44,20 +211,52 @@
         align-content: center;
     }
 
+
+    
+    aside{
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        bottom: 40vh;
+        right: 10vw;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5vw;
+        border: #000000 3px solid;
+    }
+
+    .blue{
+        background-color: blue;
+        left: 10vw;
+        
+    }
+
+    .turn{
+        box-shadow: 0 0 10px 10px #ffdd00;
+        
+    }
+
+    p{
+        font-size: 30px;
+    }
+
+                          
     .container{
         
         display: grid;
-        grid-template-rows: 0.75fr 9fr;
+        grid-template-rows: 0.75fr 9fr 1fr;
 
         border-radius: 3.5vh;
         width: 60vw;
-        height: 85vh;
+        height: 90vh;
         background-color: #ffd900;
         
-        margin: 4%;
+        margin: 3%;
         border-left: #ffd900 1vh solid;
         border-right: #ffd900 1vh solid;
-        border-bottom: #ffd900 2vh solid;
+        border-bottom: #ffd900 1vh solid;
         
     }
 
@@ -66,6 +265,16 @@
         align-self: center;
 
         background-color: #dbba00;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .container h2{
+        justify-self: center;
+        align-self: center;
+
+        font-size: 18px;
+        background-color: #000000;
         border-radius: 5px;
         padding: 5px;
     }
@@ -88,6 +297,10 @@
 
     }
 
+    .card:not(.flipped):hover{
+        transform:scale(1.05)
+    }
+
     .card {
         display:flex;
         size: 100%;
@@ -95,13 +308,55 @@
 
         background-color: #000000;
         border: solid 0.1vh #ffea00;
+        position:relative;
+        transform-style: preserve-3d;
+        transition: transform 1s;
     }
 
     .card img{
+        image-rendering: optimizeSpeed;           
+        image-rendering: -o-crisp-edges;            
+        image-rendering: pixelated;                 
+        image-rendering: optimize-contrast;         
+        -ms-interpolation-mode: nearest-neighbor;   
         
+        position:absolute;
         overflow:hidden;
-        width: 80%;
-        margin-left: 10%
+        width: 100%;
+        height: 100%;
+        border-radius: 2.5vh;
+        
+        backface-visibility: hidden;
+        
+    }
+    
+    .back{
+        background-color: #000000;
+        
+    }
+    
+    .front{
+        transform: rotateY(180deg);   
     }
 
+
+    .flipped{
+        transform: rotateY(180deg);
+
+    }
+
+    
+    @media (min-height: 600px){
+    .memory-grid{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    }
+    @media (max-height: 700px){
+    .memory-grid{
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    }
+          
 </style>
