@@ -1,15 +1,103 @@
 <script>
     import ElizaBot from 'elizabot';
+    import { enhance } from "$app/forms";
+    
+    import {chat_store} from "$lib/chat";
+
+    
+    import { onMount } from 'svelte';
+    onMount(() => {
+        /*Check if has more then 2 characters*/
+        if($chat_store.length > 2){
+            chat = JSON.parse($chat_store);
+        }
+    });
+
+    let savedchat = [];
+
+
 
     const eliza = new ElizaBot();
     let chat = [{ user: 'Eliza', message: eliza.getInitial() }];
+    let message =""
+    let wantreset = false
+
+    
+ async function write(a) {
+    //TODO: Add the new message to the chat
+    chat = [...chat, {user: "Admin", message: a}]
+    chat = chat
+
+    
+    //Hämta HTML-elementet med id:et visible
+    var element = document.getElementById("visible");
+    //Ändrar elementets CSS-egenskap display till default
+    element.style.display = "flex"; // Visa elementet
+            
+
+    // random delay for Eliza's response time
+    await new Promise((r) => setTimeout(r, 1000 + Math.random() * 1000));
+
+    //TODO: Add Eliza's response to the chat
+    chat = [...chat, {user: "Eliza", message: eliza.transform(a)}]
+    chat = chat
+
+    
+    //Hämta HTML-elementet med id:et visible
+    var element = document.getElementById("visible");
+    //Ändrar elementets CSS-egenskap display till default
+    element.style.display = "none"; // Visa elementet
+    savedchat = chat
+    $chat_store = JSON.stringify(savedchat)
+  }
+
+    $:if(wantreset === true){
+        chat = [{ user: 'Eliza', message: eliza.getInitial()}]
+        chat = chat
+        savedchat = chat
+        $chat_store = JSON.stringify(savedchat)
+        wantreset = false
+    }
+
+    function resetchat(){
+        wantreset = true
+
+    }         
 </script>
 
 
 
 <main>
     <div class="Chat-container">
+        <h1>Elizabot</h1>
+        <section>
+            {#each chat as message}
+                <article class:admin={message.user == "Admin"}>
+                    <p>{message.message}</p>
+               </article>
+            {/each}
+            <article id="visible">
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+            </article>
+        </section>
+        
+        <form method="post"
+            use:enhance={({ formElement, formData, action, cancel }) => {
+            cancel(); //don't post anything to server
+            const text = formData.get("User-input"); // what does "text" refer to?
+            write(text);
 
+            // TODO: reset the form using _____.reset() - what do we want to reset? the element or the data?
+            
+            }}>
+            
+            <input type="text" name="User-input" value ={message} placeholder="Message Eliza!" required>
+    
+            <input type="button" value="↺" on:click|preventDefault={resetchat}>
+        </form>
+        
     </div>
 </main>
 
@@ -34,12 +122,151 @@
     }
 
     .Chat-container{
+        display:grid;
+        grid-template-rows: 2fr 5fr 3fr;
+        
         width: 60vw;
         height: 80vh;
-        padding:10px;
-
+        
+        
         margin-top:3vh;
         background-color: #00c9d7;
         border-radius: 20px;
     }
+
+    h1{
+        justify-self: center;
+        align-self: center;
+        background-color: #0098a3;
+        border-radius: 5px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .Chat-container section{
+        height: 35vw;
+        width: 97%;
+        
+        overflow-y: scroll;
+        overflow-x: hidden;
+        justify-self: center;
+        align-self: center;
+        background-color: #0000005f;
+        border: black solid 3px;
+        border-radius: 30px;
+    }
+
+    article{
+        margin: 15px;
+        padding: 15px;
+        width: 50%;
+        margin-right: 50%;
+        border-radius: 20px;
+        background-color: #00c5d3;
+        
+    }
+
+    .admin{
+        display:block;
+        float: end;
+        margin-left: 50%;
+        background-color: #00b2bf;
+    }
+
+    article[id="visible"]{
+        display: none;
+        justify-content: center;
+        align-content: center;
+        width: 80px;
+        height: 40px;
+    }
+
+    form{
+        display:flex;
+        align-self: center; 
+        justify-self: center;
+        padding: 7px;
+        background-color: #00e0f0;
+        border-radius: 40px;
+        width: 58vw;
+        height: 7vh;
+        
+    }
+
+    input[type="text"]{
+        align-self: center;
+        border-radius: 30px;
+        color: white;
+        background-color: #00b2bf;
+        height:95%;
+        width: 85%;
+        
+    }
+
+    input[type="text"]:active{
+        border-color: black;
+    }
+
+    input::placeholder{
+        color: #d2d2d2e1;
+    }
+    input[type="text"]::selection{
+        border-color: #0098a3;
+    }
+
+    input[type="button"]{
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        text-justify: auto;
+        font-size: 40px;
+        font-weight:bolder;
+        height: 40px;
+        width: 45px;
+        background-color: #00c4d2;
+        
+        padding-right: 5px;
+        padding-left: 3px;
+        padding-bottom: 3px;
+        margin: 5px;
+        border-radius: 50%;
+        border: black solid 2px;
+        color: #eafeff;
+    }
+     
+    @keyframes typing {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.4); }
+        100% { transform: scale(1); }
+    }
+
+    .circle{
+        display:block;
+        margin: 3px;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        animation-name: typing;
+        animation-duration: 1000ms; /* Längd på animationen (till exempel 3 sekunder) */
+        animation-timing-function: ease-in-out; /* Funktion som styr tidsförloppet (till exempel "ease-in-out") */
+        animation-iteration-count: infinite;
+    }
+
+    
+    /* CSS-stilar för .circle med index 1 (den första cirkeln) */
+    .circle:nth-child(1) {
+        animation-delay: 0ms; /* Ingen fördröjning */
+    }
+    /* CSS-stilar för .circle med index 2 (den andra cirkeln) */
+    .circle:nth-child(2) {
+        animation-delay: 333ms; /* Starta animationen efter 333 millisekunder (ms) */
+    }
+    /* CSS-stilar för .circle med index 3 (den tredje cirkeln) */
+    .circle:nth-child(3) {
+        animation-delay: 666ms; /* Starta animationen efter 666 ms */
+    }
+            
+               
 </style>
