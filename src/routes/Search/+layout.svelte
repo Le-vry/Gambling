@@ -52,7 +52,7 @@
 
 <main>
     <header>
-        <div class="return"><a class="back" href="{base}/Search">⟵Back</a></div>
+        <div class="return"><a class="back" href="{base}">⟵Back</a></div>
         <form on:submit|preventDefault={handlesubmit(search)}>
             <input type="text" placeholder="Sök pokemon" bind:value={search} />
         </form>
