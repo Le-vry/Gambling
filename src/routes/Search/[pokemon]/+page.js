@@ -10,7 +10,7 @@ export const prerender = false;
 export async function load({ params, fetch }) {
     /* params.pokemon matches to the [pokemon] in the filesystem */
     /* for example navigating to /search/pikachu in this example will put pikachu in params.pokemon */
-    console.log(params.pokemon);
+    console.log(params);
 
     /* Perform a networked HTTP GET request to an external API  */
     /* Documentation: https://pokeapi.co */
