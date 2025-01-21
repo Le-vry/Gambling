@@ -1,4 +1,5 @@
 <script>
+    import {base} from "$app/paths"
     import{goto} from "$app/navigation"
     import {history_store} from "$lib/search";
     import { onMount } from 'svelte';
