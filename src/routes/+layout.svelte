@@ -49,7 +49,7 @@
 			<div class="link"><a class="Chat" href="{base}/Chat"> Chat </a></div>
 			<div class="link"><a class="Search" href="{base}/Search"> Search </a></div>
 			
-			<div class="Register" style="float:right"><a href="{base}/Register"> Sign Up / Log in </a></div>
+			<div class="Login" style="float:right"><a href="{base}/Login"> Sign Up / Log in </a></div>
 
 
 		</div>	
@@ -112,7 +112,7 @@
 		border-right:2px #3d3d3d;
 		border-style: solid;
 	}
-	.Register a{
+	.Login a{
 		color: #eeecec;
 		
 		padding: 8px 10px;
@@ -150,7 +150,7 @@
 	
 	
 	
-	.Register a:hover{
+	.Login a:hover{
 		background-color: #383838;
 	}
 
@@ -158,7 +158,7 @@
 
 
 	/*Change color of specific Nav links when clicked*/
-	.Register a:active{
+	.Login a:active{
 		background-color: #575757;
 	}
 </style>

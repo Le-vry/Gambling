@@ -169,8 +169,8 @@
                 <!-- svelte-ignore a11y-click-events-have-key-events -->
                 <!-- svelte-ignore a11y-no-static-element-interactions -->
                 <div class="card" class:flipped={card.flipped} on:click={flippcards(card)}>
-                    <img class="front" src={card.cardfront} alt="f*ck you">
-                    <img class="back" src={back} alt="f*ck you">
+                    <img class="front" src={card.cardfront} alt="no">
+                    <img class="back" src={back} alt="no">
                 </div>
             {/each}
         </div>

@@ -1,0 +1,1 @@
+import{w as o}from"./paths.B02QOiNg.js";const t=(window==null?void 0:window.sessionStorage.getItem("history"))??"",e=o(t);e.subscribe(s=>{window==null||window.sessionStorage.setItem("history",s)});export{e as h};
