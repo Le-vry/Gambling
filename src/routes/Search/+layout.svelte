@@ -52,13 +52,13 @@
 
 <main>
     <header>
-        <div class="return"><a class="back" href="{base}/Search">⟵Back</a></div>
+        <!--<div class="return"><a class="back" href="{base}/Search">⟵Back</a></div>
         <form on:submit|preventDefault={() => goto({base} + '/Search/' + {search})}>
             <input type="text" placeholder="Sök pokemon" bind:value={search} />
-        </form>
+        </form>-->
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div class="clear" on:click|preventDefault={clear_storage}>↻</div>
+        <!--<div class="clear" on:click|preventDefault={clear_storage}>↻</div>-->
     </header>
     <slot>
 
