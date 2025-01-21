@@ -44,15 +44,15 @@
 
     }
 
-    $:if($history_store.length > 2){
+    /*$:if($history_store.length > 2){
             history = JSON.parse($history_store);
-        }
+        }*/
         
 </script>
 
 <main>
     <header>
-        <!--<div class="return"><a class="back" href="{base}/Search">⟵Back</a></div>-->
+        <!--<div class="return"><a class="back" href="{base}/">⟵Back</a></div>-->
         <!--<form on:submit|preventDefault={() => goto({base} + '/Search/' + {search})}>
             <input type="text" placeholder="Sök pokemon" bind:value={search} />
         </form>-->
