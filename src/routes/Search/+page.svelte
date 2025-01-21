@@ -34,7 +34,7 @@
         $history_store = JSON.stringify(history)
         console.log(history)
 
-        goto('/Search/'+ b)
+        goto(base + '/Search/'+ b)
     }
     
 
@@ -91,7 +91,7 @@
 
     img{
         width: 30%;
-        
+
     }
 
 </style>

@@ -1,6 +1,7 @@
 <script>
     import{base}from '$app/paths'
     import{goto} from "$app/navigation"
+    
 
     import {history_store} from "$lib/search";
     import { onMount } from 'svelte';
@@ -33,7 +34,7 @@
         $history_store = JSON.stringify(history)
         console.log(history)
 
-        goto('/Search/'+ b)
+        goto(base +'/Search/'+ b)
     }
 
 
