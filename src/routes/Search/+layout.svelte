@@ -52,7 +52,7 @@
 
 <main>
     <header>
-        <div class="return"><a class="back" href="{base}/Search">⟵Back</a></div>
+        <!--<div class="return"><a class="back" href="{base}/Search">⟵Back</a></div>-->
         <!--<form on:submit|preventDefault={() => goto({base} + '/Search/' + {search})}>
             <input type="text" placeholder="Sök pokemon" bind:value={search} />
         </form>-->
@@ -129,7 +129,7 @@
         background-color: #c9009d;
         transform: scale(1.1);
     }
-
+    /*
     .back{
         font-size: 17px;
     }
@@ -140,6 +140,7 @@
         margin-left: 3%;
         margin-top: 1%;
     }
+    */
     /*
     input{
         color: #000000;
