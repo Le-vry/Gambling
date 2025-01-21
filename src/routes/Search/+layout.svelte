@@ -53,9 +53,8 @@
 <main>
     <header>
         <div class="return"><a class="back" href="{base}/Search">⟵Back</a></div>
-        <form on:submit|preventDefault={handlesubmit(search)}>
+        <form on:submit|preventDefault={() => goto({base} + '/Search/' + {search})}>
             <input type="text" placeholder="Sök pokemon" bind:value={search} />
-            {console.log(search)}
         </form>
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
