@@ -35,7 +35,7 @@
         $history_store = JSON.stringify(history)
         console.log(history)
 
-        goto(base + '/Search/'+ b)
+        goto(base +'/Search/'+ b)
     }
     
 
