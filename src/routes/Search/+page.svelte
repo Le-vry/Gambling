@@ -46,7 +46,7 @@
 <main>
     <!-- svelte-ignore a11y-missing-attribute -->
     <img src="{image}">
-    <form on:submit|preventDefault={handlesubmit(search)}>
+    <form on:submit|preventDefault={() => goto({base} + '/Search/' + {search})}>
         <input type="text" placeholder="Sök upp en pokemon" bind:value={search} />
     </form>
                    
