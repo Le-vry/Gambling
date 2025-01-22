@@ -21,7 +21,6 @@
     function handlesubmit(a){
         let b
         b = a.toLowerCase()
-        /*
         if(history.length < 5){
             history.unshift(b)
 
@@ -34,7 +33,7 @@
 
         history = history
         $history_store = JSON.stringify(history)
-        console.log(history)*/
+        console.log(history)
 
         goto(base +'/Search/'+ b)
     }
