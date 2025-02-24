@@ -265,6 +265,7 @@
         }
         .info{
             top: -135px;
+            font-size: 6px;
         }
     }
     
