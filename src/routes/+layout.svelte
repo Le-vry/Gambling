@@ -48,6 +48,9 @@
 			<div class="link"><a class="Memory" href="{base}/Memory"> Memory </a></div>
 			<div class="link"><a class="Chat" href="{base}/Chat"> Chat </a></div>
 			<div class="link"><a class="Search" href="{base}/Search"> Search </a></div>
+			<div class="link"><a class="Uxlogin" href="{base}/Uxlogin"> Ux-login </a></div>
+			<div class="link"><a class="Game" href="{base}/Game"> Game</a></div>
+			<div class="link"><a class="Contract" href="{base}/Contract"> Contract</a></div>
 			
 			<div class="Login" style="float:right"><a href="{base}/Login"> Sign Up / Log in </a></div>
 
@@ -148,10 +151,19 @@
 		background-color: #FF00AC;
 	}
 	
+	.Uxlogin:hover{
+		background-color: #757575;
+	}
 	
+	.Game:hover{
+		background-color: #700000;
+	}
 	
 	.Login a:hover{
 		background-color: #383838;
+	}
+	.Contract:hover{
+		background-color: #528e50;
 	}
 
 
