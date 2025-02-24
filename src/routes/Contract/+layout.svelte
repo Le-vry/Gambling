@@ -138,12 +138,9 @@
   
 	@media screen and (min-height: 400px){
 		.link div{
-			font-size: 16px;
+			font-size: 10px;
 		}
 
-		.link a{
-			font-size: 30px;
-		}
 	}
 
 </style>
