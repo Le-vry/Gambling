@@ -71,11 +71,11 @@
                 {#each images as image}
                     <div class="shop_item">
                         <div class="img-holder"><img src="{image.img}.jpg" alt={image.img} style="width"> 
-                             <button on:click|preventDefault={() => ShowInfo(image)} style="position:relative; top: -330px; left:5px;">
+                             <button on:click|preventDefault={() => ShowInfo(image)} style="position:relative;">
                                 <strong>{image.infobutton}</strong>
                             </button>
 
-                            <div class="info" style="position:relative; top: -300px; left:5px; display:{image.visable};">
+                            <div class="info" style="position:relative; display:{image.visable};">
                                 <p>Name: {image.img}</p>
                                 <p>Finder: {image.finder} Location:{image.Country}</p>
                                 <p>{image.info}</p>
@@ -179,6 +179,8 @@
     }
 
     .img-holder button{
+        top: -330px; 
+        left:5px;
         background-color: #ffffff;
         height: 25px;
         width: 25px;
@@ -188,7 +190,8 @@
     }
 
     .info{
-        
+        top: -300px; 
+        left:5px;
         background-color: #f9f9f9;
         border:#146614 solid 2px;
         width: 95%;
@@ -202,19 +205,19 @@
     }
 
     .dropdown-content {
-	display: flex;
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-	right: 10px;
-    top: 10px;
-	background-color: #f9f9f9;
-    border:#146614 solid 2px;
-	width: 20vw;
-	height: 60vh;
-    z-index: 2;
-    border-radius: 15px;
-	box-shadow: 0px 8px 16px 0px #00000033;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        right: 10px;
+        top: 10px;
+        background-color: #f9f9f9;
+        border:#146614 solid 2px;
+        width: 20vw;
+        height: 60vh;
+        z-index: 2;
+        border-radius: 15px;
+        box-shadow: 0px 8px 16px 0px #00000033;
 
 	}
 
@@ -249,13 +252,19 @@
 		list-style: none;
 	}
 
-    @media screen and (min-height: 400px){
+    @media screen and (max-width: 700px){
         .holder{
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 1fr);
         }
         .img-holder{
             height: 160px;
+        }
+        .img-holder button{
+            top: -155px;
+        }
+        .info{
+            top: -135px;
         }
     }
     

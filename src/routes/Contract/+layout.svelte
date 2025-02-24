@@ -136,9 +136,9 @@
         background-color: #7b5537ce;
     }
   
-	@media screen and (min-height: 400px){
+	@media screen and (max-width: 700px){
 		.link div{
-			font-size: 14px;
+			font-size: 7px;
 		}
 
 	}
