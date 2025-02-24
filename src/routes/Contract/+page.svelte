@@ -248,5 +248,12 @@
 		color:#000000;
 		list-style: none;
 	}
+
+    @media screen and (min-height: 400px){
+        .holder{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+    }
     
 </style>
