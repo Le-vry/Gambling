@@ -254,6 +254,9 @@
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 1fr);
         }
+        .img-holder{
+            height: 160px;
+        }
     }
     
 </style>
